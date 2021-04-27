@@ -1,4 +1,10 @@
 # face-recognition-ncnn
+##  Network
+face detection netword:**RetinaFace** [MobileNet0.25](https://github.com/deepinsight/insightface/issues/669)
+
+face recognition:**mobilenet v2 faecnet** [mobilenet v2 faecnet](https://github.com/deepinsight/insightface/issues/214)
+
+## Test
 
 - for x86_64 linux  with no vulkan
 
@@ -7,6 +13,7 @@ mkdir build
 cd build
 cmake ../
 make -j4
+./face_ncnn ../test_pic/2.jpg ../test_pic/4.jpg
 ```
 
 - for jetson agx  
@@ -18,9 +25,16 @@ mkdir build
 cd build
 cmake -DCMAKE_TOOLCHAIN_FILE=../toolchains/jetson.toolchain.cmake ../
 make -j4
+./face_ncnn ../test_pic/2.jpg ../test_pic/4.jpg
 ```
 
+- 测试图片放在test_pic
 
+- 结果放在output_pic
+
+  ![](output_pic/des.jpg)
+  
+  ![](output_pic/des1.jpg)
 
 - References
 
